@@ -53,7 +53,7 @@ def fileCreate(strNamaFile, strData):
 		f.writelines(str(strData))
 		f.close()
 		
-	print "file created: " + strNamaFile + "\n"
+	print ("file created: " + strNamaFile + "\n")
 	
 	
 	
@@ -61,9 +61,9 @@ def readTextFile(strNamaFile):
 
 	f = open(strNamaFile, "r")
 	
-	print "file being read: " + strNamaFile + "\n"
+	print ("file being read: " + strNamaFile + "\n")
 	
-	return f.read().decode("windows-1252").encode('ascii', 'ignore')
+	return f.read()
 	
 
 
@@ -77,7 +77,7 @@ def vtt_to_srt(strNamaFile):
 	
 	strNamaFile = strNamaFile.replace(".vtt",".srt")
 		
-	print strNamaFile
+	print (strNamaFile)
 		
 	fileCreate(strNamaFile, strData)
 	
@@ -106,7 +106,7 @@ def walktree(TopMostPath, callback):
         else:
 		
             # Unknown file type, print a message
-            print 'Skipping %s' % pathname
+            print ('Skipping %s' % pathname)
 
 			
 
@@ -120,7 +120,7 @@ def main():
 	
 	#just edit the path below
 
-	TopMostPath = 'C:\Users\developer\Videos\Virtual Universities\Coursera'
+	TopMostPath="C:\\Users\\mbrow\\Desktop\\New folder"
 
 	walktree(TopMostPath, convertVTTtoSRT)
 	
